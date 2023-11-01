@@ -1,0 +1,14 @@
+namespace: msor-test
+resources:
+  - dp.yml
+  - ns.yml
+commonLabels:
+  app: multiple-files-configmap-test
+configMapGenerator:
+  - name: envs
+    envs:
+      - .env
+  - name: files
+    files:
+      - file1.txt
+      - file2.txt
